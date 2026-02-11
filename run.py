@@ -25,7 +25,7 @@ player = pygame.image.load('player.png')
 player_size = player.get_size()
 player_height = player_size[1]
 player_width = player_size[0]
-player_rect = [(screen_width - player_width) / 2, screen_height - player_height]
+player_rect = [(screen_width - player_width) // 2, screen_height - player_height]
 
 # setting the window title
 pygame.display.set_caption('unicorn')
@@ -48,3 +48,4 @@ main.main(screen, player, screen_width, screen_height, player_rect)
 # ....,';,:::;'+
 #  .,,::::::;''
 #    ,::::;;.
+
