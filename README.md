@@ -1,6 +1,6 @@
 unicorn
 =======
-unicorn is a little game by koex (also known as ethicalsignal), developed in python using pygame. This version is deprecated and requires Python 2.
+unicorn is a little game by koex (also known as ethicalsignal), developed in python using pygame. This version was deprecated and has now been made compatible with Python 3.
 
 Please report bugs.
 
@@ -30,9 +30,10 @@ There is a unicorn and it's raining donuts. Eat the donuts to get a higher score
 
 unicorn version 0.2
 -------
-The unicorn is still there and able to move. You can see your (by now) useless score and level. Donuts are appearing and falling down. You cannot interact with donuts (by now). (With LSD, you can!)
+The unicorn is still there and able to move. You can see your (by now) useless score and level. Donuts are appearing and falling down. You cannot interact with donuts (so far). (With LSD, you might!)
 
 
 unicorn version 0.1
 -------
 There's a unicorn. It can move to the left and to the right, but it can't leave his tiny window.
+
