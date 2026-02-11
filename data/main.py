@@ -17,9 +17,9 @@ def main(screen, player, screen_width, screen_height, player_rect):
 	life = pygame.image.load('life.png')
 	lifes = 3
 
-	life_one = ((screen_width / 2 - life.get_size()[0]) - 10, 10)
-	life_two = ((screen_width / 2), 10)
-	life_three = ((screen_width / 2 + life.get_size()[0]) + 10, 10)
+	life_one = ((screen_width // 2 - life.get_size()[0]) - 10, 10)
+	life_two = ((screen_width // 2), 10)
+	life_three = ((screen_width // 2 + life.get_size()[0]) + 10, 10)
 
 	donut_event = pygame.USEREVENT+1
 	pygame.time.set_timer(donut_event, 1000)
@@ -109,7 +109,7 @@ def main(screen, player, screen_width, screen_height, player_rect):
 					new_donuts = []
 					for i in donuts:
 						i[1] = i[1] + donut_speed
-						if i[0] >= player_rect[0] - donut.get_size()[0]/2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - donut.get_size()[1]/2:
+						if i[0] >= player_rect[0] - donut.get_size()[0]//2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - donut.get_size()[1]/2:
 							score = score + 10
 
 							if score == 100:
@@ -220,3 +220,4 @@ def main(screen, player, screen_width, screen_height, player_rect):
 				screen.blit(player, player_rect) # spawn player at player_rect
 
 				pygame.display.update() # update the screen
+
