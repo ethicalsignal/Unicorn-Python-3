@@ -54,15 +54,15 @@ def main(screen, player, screen_width, screen_height, player_rect):
 	donut_speed = 1
 
 	def gameover(score):
+		screen = pygame.display.set_mode((500,700))
 		while True:
-			screen = pygame.display.set_mode((500,700))
 			font = pygame.font.Font(None, 20)
 			screen.fill(000000)
 			gameover = font.render('GAME OVER', 1, (0xff, 0xff, 0xff))
-			gameover_pos = [screen_width / 2 - gameover.get_size()[0] / 2, 200]
+			gameover_pos = [screen_width // 2 - gameover.get_size()[0] // 2, 200]
 			final = 'Your final score is %d' % score
 			final_score = font.render(str(final), 1, (0xff, 0xff, 0xff))
-			final_score_pos = [screen_width / 2 - final_score.get_size()[0] / 2, 250]
+			final_score_pos = [screen_width // 2 - final_score.get_size()[0] // 2, 250]
 			screen.blit(gameover, gameover_pos)
 			screen.blit(final_score, final_score_pos)
 			pygame.display.update()
@@ -109,7 +109,7 @@ def main(screen, player, screen_width, screen_height, player_rect):
 					new_donuts = []
 					for i in donuts:
 						i[1] = i[1] + donut_speed
-						if i[0] >= player_rect[0] - donut.get_size()[0]//2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - donut.get_size()[1]/2:
+						if i[0] >= player_rect[0] - donut.get_size()[0]//2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - donut.get_size()[1]//2:
 							score = score + 10
 
 							if score == 100:
@@ -148,7 +148,7 @@ def main(screen, player, screen_width, screen_height, player_rect):
 					new_enemys = []
 					for i in enemys:
 						i[1] = i[1] + enemy_speed
-						if i[0] >= player_rect[0] - enemy.get_size()[0]/2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - enemy.get_size()[1]:
+						if i[0] >= player_rect[0] - enemy.get_size()[0]//2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - enemy.get_size()[1]:
 							lifes = lifes - 1
 							i[1] = screen_height
 						elif i[1] < screen_height - enemy.get_size()[1]:
@@ -161,7 +161,7 @@ def main(screen, player, screen_width, screen_height, player_rect):
 					lifes_falling_new = []
 					for i in lifes_falling:
 						i[1] = i[1] + 1
-						if i[0] >= player_rect[0] - life.get_size()[0]/2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - life.get_size()[1]:
+						if i[0] >= player_rect[0] - life.get_size()[0]//2 and i[0] <= player_rect[0] + player.get_size()[0] and i[1] >= screen_height - player.get_size()[1] - life.get_size()[1]:
 							if lifes < 3:
 								lifes = lifes + 1
 							i[1] = screen_height
@@ -220,4 +220,5 @@ def main(screen, player, screen_width, screen_height, player_rect):
 				screen.blit(player, player_rect) # spawn player at player_rect
 
 				pygame.display.update() # update the screen
+
 
